@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\MetaData.cs" />
     <Compile Include="Assets\Scripts\NeoLegs.cs" />
     <Compile Include="Assets\Scripts\NeoMain.cs" />
+    <Compile Include="Assets\Scripts\Parser.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/DemonPenguin1/Documents/GitHub/3D-Environment/NEO3D/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

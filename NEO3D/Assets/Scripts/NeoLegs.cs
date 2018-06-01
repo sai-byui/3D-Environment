@@ -20,13 +20,10 @@ public class NeoLegs : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
 	}
 
-	void Update() {
-		transform.Rotate (new Vector3 (0, Input.GetAxis("Horizontal"), 0) * rotationSpeed);
-
-        if (Input.GetMouseButtonDown(0))
+    void Update() {
+        if (Input.GetMouseButtonDown(0) && !Parser.focused)
         {
             RaycastHit hit;
-
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
@@ -34,12 +31,5 @@ public class NeoLegs : MonoBehaviour {
                 Debug.DrawRay(Camera.main.transform.position, hit.point, Color.red, 3f);
             }
         }
-	}
-
-	void FixedUpdate(){
-		moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
-		moveDirection = transform.TransformDirection(moveDirection);
-		moveDirection *= speed;
-		rig.AddForce (moveDirection);
 	}
 }

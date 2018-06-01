@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputController : MonoBehaviour {
 
@@ -14,7 +15,8 @@ public class InputController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
+        
+        if (Input.GetKeyDown (KeyCode.Space) && !Parser.focused) {
 			if (neoView.rect == miniView)
 				neoView.rect = fullView;
 			else
